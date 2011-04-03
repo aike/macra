@@ -47,11 +47,13 @@ BEGIN {
 	IfdefCondition[CondSP] = CondNone
 
 	# -D option
-	for (i = 0; i < ARGC; i++) {
+	argc = ARGC
+	for (i = 0; i < argc; i++) {
 		if (ARGV[i] ~ /^-D[a-zA-Z0-9_]+$/) {
 			v = ARGV[i]
 			gsub(/^-D/, "", v)
 			gHash[v] = ""
+			ARGC--
 		}
 	}
 }
