@@ -97,7 +97,7 @@ function eval(line,      token, s, pushedfile) {
 	num_fields = split2(line, token)
 
 	# comment character
-	if (token[1] ~ /#.*/) {
+	if (token[1] ~ /^#.*/) {
 		# do nothing
 	}
 
